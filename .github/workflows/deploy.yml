@@ -1,0 +1,27 @@
+name: Deploy to Mac Mini
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Pull & Restart on Mac Mini
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Pull 最新コード
+        run: |
+          cd /Users/hosakaatsushi/Desktop/bolt.diy
+          git pull origin main
+
+      - name: 再ビルド・再起動
+        run: |
+          # 例: docker-compose を使っている場合
+          cd /Users/hosakaatsushi/Desktop/bolt.diy
+          docker-compose pull
+          docker-compose up -d --build
+
