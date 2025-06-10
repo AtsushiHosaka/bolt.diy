@@ -146,6 +146,11 @@ export default defineConfig((config) => {
         },
       },
     },
+    server: {
+      allowedHosts: [
+        "bolt.atsushi.f5.si",
+      ]
+    }
   };
 });
 
