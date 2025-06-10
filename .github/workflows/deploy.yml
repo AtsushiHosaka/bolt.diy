@@ -22,6 +22,6 @@ jobs:
         run: |
           # 例: docker-compose を使っている場合
           cd /Users/hosakaatsushi/Desktop/bolt.diy
-          docker-compose pull
+          docker build . --target bolt-ai-development
           docker-compose up -d --build
 
