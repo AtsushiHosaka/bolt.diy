@@ -23,4 +23,4 @@ jobs:
           # 例: docker-compose を使っている場合
           cd /Users/hosakaatsushi/Desktop/bolt.diy
           docker build . --target bolt-ai-development
-          docker-compose --production development up -d
+          docker compose --production development up -d
